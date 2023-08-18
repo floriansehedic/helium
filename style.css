@@ -10,61 +10,61 @@
   p {
     font-size: 0.8rem;
   }
+
   body {
     min-height: 100vh;
     background: rgb(29, 29, 29);
     color: rgb(250, 250, 250);
   }
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
     padding: 10px 20px;
   }
   nav ul {
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
   }
   .header {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 50% 50%;
     margin: 30px auto;
   }
-  .header-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-  }
+  
   h1 {
     font-size: 5rem;
   }
+
+  .header-left{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
   .header-left-container h3 {
     color: #474dff;
     font-size: 1.8rem;
   }
+
   .header-right {
     width: 50%;
   }
+  
   #modem {
     width: 100%;
   }
 
   .infos {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 80%;
     background: rgb(10, 10, 10);
     border-radius: 10px;
   }
 
-  .infos-left {
-    width: 33%;
-  }
 
   .btn-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
   }
 
   button {
@@ -80,23 +80,79 @@
   }
 
   .infos-right {
-    width: 67%;
+    width: 100%;
   }
 
   .investors {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: center;
     height: 80%;
   }
 
 .img-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
+
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
   .img-container img {
     height: 60px;
+  }
+
+
+
+  @media screen and (max-width: 900px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .header-left-container h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    nav ul {
+      display: flex;
+      justify-content: normal;
+      align-items: center;
+    }
+
+    .header {
+      display: block;
+    }
+
+    .header-left {
+      display: block;
+    }
+
+    #modem {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .infos {
+      display: block;
+    }
+
+    .infos-left {
+      display: grid;
+      justify-content: space-around;
+      justify-items: center
+    }
+
+    .infos-right{
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    .investors {
+
+    }
   }
